@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Everything Every Single Week</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="mainView" class="container">
+    <div id="week1" class="folder" onclick="toggleFolder('week1')">
+      <img src="folder-icon.png" alt="folder icon" />
+      <div class="folder-content">
+        <h2 id="folderTitle">Week 01 — 🔒 Welcome To The Conversation<br><span style='font-weight:normal;'>Unlocks at 50 fans</span></h2>
+        <div id="status"></div>
+      </div>
+    </div>
+    <div class="folder locked">
+      <img src="folder-icon.png" alt="folder icon" />
+      <div class="folder-content">
+        <h2>Week 02 — 🔒 Locked<br><span style='font-weight:normal;'>Unlocks in 6 days</span></h2>
+      </div>
+    </div>
+    <div class="folder locked">
+      <img src="folder-icon.png" alt="folder icon" />
+      <div class="folder-content">
+        <h2>Week 03 — 🔒 Locked<br><span style='font-weight:normal;'>Unlocks in 13 days</span></h2>
+      </div>
+    </div>
+    <div class="folder locked">
+      <img src="folder-icon.png" alt="folder icon" />
+      <div class="folder-content">
+        <h2>Week 04 — 🔒 Locked<br><span style='font-weight:normal;'>Unlocks in 20 days</span></h2>
+      </div>
+    </div>
+    <div class="folder locked">
+      <img src="folder-icon.png" alt="folder icon" />
+      <div class="folder-content">
+        <h2>Week 05 — 🔒 Locked<br><span style='font-weight:normal;'>Unlocks in 27 days</span></h2>
+      </div>
+    </div>
+
+    <div id="voting" style="display:none;">
+      <p>Before you enter the waiting room...<br><strong>Who is your favourite RION?</strong></p>
+      <div class="vote-options">
+        <label><input type="radio" name="rion" value="Harley" /> Harley</label>
+        <label><input type="radio" name="rion" value="Noah" /> Noah</label>
+        <label><input type="radio" name="rion" value="Asher" /> Asher</label>
+        <label><input type="radio" name="rion" value="Tom" /> Tom</label>
+        <label><input type="radio" name="rion" value="All of them" /> All of them</label>
+        <label><input type="radio" name="rion" value="None of them" /> None of them</label>
+      </div>
+      <button class="join-btn" onclick="submitVote()">Enter</button>
+    </div>
+  </div>
+
+  <div id="waitingRoom" class="container hidden">
+    <span class="back-btn" onclick="goBack()">← Back to folders</span>
+    <h2>Week 01 Waiting Room</h2>
+    <div id="rewardSection">
+      <p id="rewardStatus">🔒 This week's snippet will unlock when 50 fans have joined.</p>
+      <audio id="audioPlayer" controls disabled>
+        <source src="welcome-to-the-conversation-tease.wav" type="audio/wav">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+    <div class="chat-box">
+      <h3>Live Chat</h3>
+      <div id="chatMessages" class="chat-messages"></div>
+      <textarea id="chatInput" placeholder="Type your message..."></textarea>
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
