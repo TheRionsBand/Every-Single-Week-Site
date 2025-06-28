@@ -150,28 +150,23 @@
     </div>
   </div>
 
-  <script>
-    function toggleFolder(id) {
-      if (id === 'week1') {
-        document.getElementById('mainView').style.display = 'none';
-        document.getElementById('voting').style.display = 'block';
-      }
-    }
+  <div id="waitingRoom" class="container hidden">
+    <div class="back-btn" onclick="goBack()">← Back to folders</div>
+    <h2>Week 01 Waiting Room</h2>
+    <div id="rewardStatus">
+      <p>Waiting for 50 fans to join...</p>
+    </div>
+    <audio id="audioPlayer" controls disabled>
+      <source src="https://www.dropbox.com/scl/fi/87ofie1legui8zly5a7in/welcome-to-the-conversation-tease.wav?rlkey=i9sf5lvjk15r4te42zwb43ano&raw=1" type="audio/wav">
+      Your browser does not support the audio element.
+    </audio>
+    <div class="chat-box">
+      <h3>Chat</h3>
+      <div class="chat-messages" id="chatMessages"></div>
+      <textarea id="chatInput" placeholder="Say something..."></textarea>
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
 
-    function submitVote() {
-      const options = document.getElementsByName('rion');
-      let selected = null;
-      for (let opt of options) {
-        if (opt.checked) selected = opt.value;
-      }
-      if (!selected) {
-        alert('Please select a RION before entering.');
-        return;
-      }
-      // For now, just go back to folder view (simulate next step)
-      document.getElementById('mainView').style.display = 'block';
-      document.getElementById('voting').style.display = 'none';
-    }
-  </script>
 </body>
 </html>
